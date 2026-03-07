@@ -228,15 +228,3 @@ More info:
 - `src/features/`, `src/hooks/`, `src/types/`
 - [ ] `.env`, `.env.development`, `.env.production`, `.env.example`
 
-
-
-
-
-
-
-
-
-
-
-
-
