@@ -29,8 +29,18 @@ import { Button } from "@/components/ui/button"
 
 export function Sandbox() {
   return (
+    <div>
+      <Request />
+      <Request />
+      <Request />
+    </div>
+  )
+}
+
+function Request() {
+  return (
     <section>
-      <Card className="max-w-md">
+      <Card className="max-w-md m-4">
         <CardHeader>
           <CardTitle>POST</CardTitle>
           <TimeStamp />
@@ -55,8 +65,7 @@ const codePlaceholder = `Accept: */* Connection: close Content-Length: 9 Content
 
 function MyAccordion() {
   return (
-    <div className="p-1">
-      <Accordion className="p-2" type="single" collapsible defaultValue="item-1">
+    <Accordion type="single" collapsible defaultValue="item-1">
         <AccordionItem value="item-1">
           <AccordionTrigger>Headers</AccordionTrigger>
           <AccordionContent>
@@ -71,7 +80,6 @@ function MyAccordion() {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </div>
   )
 }
 
