@@ -58,17 +58,68 @@ export function Sandbox() {
 }
 
 function NavBar() {
+  const components = [
+    {
+      title: "abc",
+      href: "abc",
+      count: 123
+    },
+    {
+      title: "lorem",
+      href: "lorem",
+      count: 42
+    },
+    {
+      title: "ipsum",
+      href: "ipsum",
+      count: 0
+    },
+  ]
   return (
-    <NavigationMenu className="bg-secondary w-full">
+    <NavigationMenu className="justify-start bg-secondary w-full max-w-full">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuLink href="/">RequestBin</NavigationMenuLink>
         </NavigationMenuItem>
+          <NavigationMenuItem className="flex">
+          <NavigationMenuTrigger>Baskets</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[200px] gap-2">
+              {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.count} requests
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href="/">Docs</NavigationMenuLink>
+          <NavigationMenuLink href="https://github.com/ls-capstone-team-one/hook-catcher">Docs</NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
+  )
+}
+
+function ListItem({
+  title,
+  children,
+  href,
+  ...props
+}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+  return (
+    <li {...props}>
+      <NavigationMenuLink href={href}>
+        <div className="flex flex-col gap-1 text-sm">
+          <div className="leading-none font-medium">{title}</div>
+          <div className="line-clamp-2 text-muted-foreground">{children}</div>
+        </div>
+      </NavigationMenuLink>
+    </li>
   )
 }
 
