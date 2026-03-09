@@ -106,7 +106,8 @@ function NavBar() {
     },
   ]
   return (
-    <NavigationMenu className="flex w-full max-w-full justify-between bg-secondary p-3 sticky top-0">
+    <div className="sticky top-0 z-50 w-full bg-secondary">
+    <NavigationMenu className="flex w-full max-w-full justify-between p-3">
       <div>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -144,6 +145,7 @@ function NavBar() {
         <BasketButtons />
       </div>
     </NavigationMenu>
+    </div>
   )
 }
 
