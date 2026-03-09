@@ -229,7 +229,7 @@ function BasketInfoHeader() {
   return (
     <section className="p-3">
       <h1 className="text-2xl font-bold">Basket: {placeholder.id}</h1>
-      <p>Bin URL: {basketUrl} <CopyButton url={basketUrl}/></p>
+      <p>Bin URL: {basketUrl} <CopyButton content={basketUrl}/></p>
       {/* <p><Tally5 className="inline" /> Count = {placeholder.count}</p> */}
       <p>Request Count: {placeholder.count}</p>
       
@@ -237,9 +237,9 @@ function BasketInfoHeader() {
   )
 }
 
-function CopyButton({ url, className }: { url: string, className: string }) {
+function CopyButton({ content, className="" }: { content: string, className?: string }) {
   return (
-    <Button variant="outline" size="icon" aria-label="More Options" className={className}>
+    <Button variant="ghost" size="icon" aria-label="Copy to clipboard" className={className} onClick={() => navigator.clipboard.writeText(content)}>
       <ClipboardCopy />
     </Button>
   )
@@ -255,7 +255,7 @@ function Request() {
           <DateStamp />
         </CardHeader>
         <CardContent>
-          <Path />
+          <Path path="abc123"/>
           <MyAccordion />
         </CardContent>
         {/* <CardFooter> */}
@@ -296,28 +296,24 @@ type SimpleCodeBlockProps = {
   copyButtonVisible?: boolean,
 }
 
-function SimpleCodeBlock({ content, copyButtonVisible=false }: SimpleCodeBlockProps) {
+function SimpleCodeBlock({ content, copyButtonVisible=true }: SimpleCodeBlockProps) {
   return (
     <Item className="bg-secondary">
       <ItemContent>
         <p>{content}</p>
       </ItemContent>
-      <ItemMedia variant="icon">
-        <ClipboardCopy />
-      </ItemMedia>
+      {copyButtonVisible && <CopyButton content={content} className="hover:bg-ring"/>}
     </Item>
   )
 }
 
-function Path() {
+function Path({ path }: { path: string }) {
   return (
     <Item className="bg-primary text-muted">
       <ItemContent>
-        <p>/abc123</p>
+        <p>/{path}</p>
       </ItemContent>
-      <ItemMedia variant="icon">
-        <ClipboardCopy />
-      </ItemMedia>
+      <CopyButton content={path}/>
     </Item>
   )
 }
