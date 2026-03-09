@@ -237,9 +237,11 @@ function BasketInfoHeader() {
   )
 }
 
-function CopyButton({ url }: { url: string }) {
+function CopyButton({ url, className }: { url: string, className: string }) {
   return (
-    <Button variant="outline" size="icon" aria-label="More Options"><ClipboardCopy /></Button>
+    <Button variant="outline" size="icon" aria-label="More Options" className={className}>
+      <ClipboardCopy />
+    </Button>
   )
 }
 
@@ -290,10 +292,11 @@ function MyAccordion() {
 }
 
 type SimpleCodeBlockProps = {
-  content: string
+  content: string,
+  copyButtonVisible?: boolean,
 }
 
-function SimpleCodeBlock({ content }: SimpleCodeBlockProps) {
+function SimpleCodeBlock({ content, copyButtonVisible=false }: SimpleCodeBlockProps) {
   return (
     <Item className="bg-secondary">
       <ItemContent>
