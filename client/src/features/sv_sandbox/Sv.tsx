@@ -49,7 +49,7 @@ import {
   ButtonGroupText,
 } from "@/components/ui/button-group"
 
-import { Webhook, Clock, CalendarDays, ClipboardCopy, ArrowLeftIcon } from "lucide-react"
+import { Webhook, Clock, CalendarDays, ClipboardCopy, ArrowLeftIcon, RefreshCwIcon, RotateCwIcon, Trash, Flame, FlameIcon, Shredder, Trash2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -93,35 +93,39 @@ function NavBar() {
     },
   ]
   return (
-    <NavigationMenu className="justify-start bg-secondary w-full max-w-full">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/">RequestBin</NavigationMenuLink>
-        </NavigationMenuItem>
-          <NavigationMenuItem className="flex">
-          <NavigationMenuTrigger
-            onPointerMove={(e) => e.preventDefault()}
-            onPointerLeave={(e) => e.preventDefault()}
-          >Baskets</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[200px] gap-2">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.count} requests
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="https://github.com/ls-capstone-team-one/hook-catcher">Docs</NavigationMenuLink>
-        </NavigationMenuItem>
+    <NavigationMenu className="bg-secondary w-full max-w-full flex">
+      <div className="justify-self-start">
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuLink href="/">RequestBin</NavigationMenuLink>
+          </NavigationMenuItem>
+            <NavigationMenuItem className="flex">
+            <NavigationMenuTrigger
+              onPointerMove={(e) => e.preventDefault()}
+              onPointerLeave={(e) => e.preventDefault()}
+            >Baskets</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[200px] gap-2">
+                {components.map((component) => (
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                  >
+                    {component.count} requests
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuLink href="https://github.com/ls-capstone-team-one/hook-catcher">Docs</NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </div>
+      <div className="justify-self-end">
         <ButtonGroupDemo />
-      </NavigationMenuList>
+      </div>
     </NavigationMenu>
   )
 }
@@ -149,54 +153,31 @@ export function ButtonGroupDemo() {
 
   return (
     <ButtonGroup>
-      <ButtonGroup className="hidden sm:flex">
-        <Button variant="outline" size="icon" aria-label="Go Back">
-          <ArrowLeftIcon />
+      <ButtonGroup className="flex">
+        <Button variant="outline" size="icon" aria-label="Refresh">
+          <RefreshCwIcon />
+        </Button>
+        <Button variant="default" size="icon" aria-label="Auto-refresh">
+          <RotateCwIcon />
         </Button>
       </ButtonGroup>
+
       <ButtonGroup>
-        <Button variant="outline">Archive</Button>
-        <Button variant="outline">Report</Button>
-      </ButtonGroup>
-      <ButtonGroup>
-        <Button variant="outline">Snooze</Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon" aria-label="More Options">
-              <Clock />
+              <Trash />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-40">
             <DropdownMenuGroup>
               <DropdownMenuItem>
-                <Clock />
-                Mark as Read
+                <Shredder />
+                Delete requests
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Clock />
-                Archive
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
-            <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <Clock />
-                Snooze
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Clock />
-                Add to Calendar
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Clock />
-                Add to List
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
-            <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem variant="destructive">
-                <Clock />
-                Trash
+                <Trash2 />
+                Destroy basket
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
