@@ -64,7 +64,22 @@ import {
   Trash2,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
+
+function useHideOnScrollDown() {
+  const [hidden, setHidden] = useState(false)
+  const lastY = useRef(0)
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY
+      setHidden(y > lastY.current && y > 64)
+      lastY.current = y
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+  return hidden
+}
 
 export function Sandbox() {
   return (
@@ -88,6 +103,7 @@ export function Sandbox() {
 }
 
 function NavBar() {
+  const hidden = useHideOnScrollDown()
   const components = [
     {
       title: "abc",
@@ -106,7 +122,7 @@ function NavBar() {
     },
   ]
   return (
-    <div className="top-0 z-50 w-full bg-secondary">
+    <div className={`sticky top-0 z-50 w-full bg-secondary transition-transform duration-300 ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
     <NavigationMenu className="flex w-full max-w-full justify-between p-3">
       <div>
         <NavigationMenuList>
