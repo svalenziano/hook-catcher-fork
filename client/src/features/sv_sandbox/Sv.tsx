@@ -82,7 +82,10 @@ function NavBar() {
           <NavigationMenuLink href="/">RequestBin</NavigationMenuLink>
         </NavigationMenuItem>
           <NavigationMenuItem className="flex">
-          <NavigationMenuTrigger>Baskets</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            onPointerMove={(e) => e.preventDefault()}
+            onPointerLeave={(e) => e.preventDefault()}
+          >Baskets</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-2">
               {components.map((component) => (
