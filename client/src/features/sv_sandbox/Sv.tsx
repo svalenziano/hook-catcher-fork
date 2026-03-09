@@ -223,14 +223,23 @@ function BasketInfoHeader() {
     id: "48wje34",
     count: 42
   }
+
+  const basketUrl = env.APP_URL + "/" + placeholder.id
+
   return (
     <section className="p-3">
       <h1 className="text-2xl font-bold">Basket: {placeholder.id}</h1>
-      <p>Requests are collected at {env.APP_URL}/{placeholder.id} <ClipboardCopy className="inline" /></p>
+      <p>Bin URL: {basketUrl} <CopyButton url={basketUrl}/></p>
       {/* <p><Tally5 className="inline" /> Count = {placeholder.count}</p> */}
-      <p>Count = {placeholder.count}</p>
+      <p>Request Count: {placeholder.count}</p>
       
     </section>
+  )
+}
+
+function CopyButton({ url }: { url: string }) {
+  return (
+    <Button variant="outline" size="icon" aria-label="More Options"><ClipboardCopy /></Button>
   )
 }
 
