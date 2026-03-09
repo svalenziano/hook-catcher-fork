@@ -106,7 +106,7 @@ function NavBar() {
     },
   ]
   return (
-    <div className="sticky top-0 z-50 w-full bg-secondary">
+    <div className="top-0 z-50 w-full bg-secondary">
     <NavigationMenu className="flex w-full max-w-full justify-between p-3">
       <div>
         <NavigationMenuList>
