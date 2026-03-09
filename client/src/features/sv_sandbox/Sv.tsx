@@ -49,7 +49,20 @@ import {
   ButtonGroupText,
 } from "@/components/ui/button-group"
 
-import { Webhook, Clock, CalendarDays, ClipboardCopy, ArrowLeftIcon, RefreshCwIcon, RotateCwIcon, Trash, Flame, FlameIcon, Shredder, Trash2 } from "lucide-react"
+import {
+  Webhook,
+  Clock,
+  CalendarDays,
+  ClipboardCopy,
+  ArrowLeftIcon,
+  RefreshCwIcon,
+  RotateCwIcon,
+  Trash,
+  Flame,
+  FlameIcon,
+  Shredder,
+  Trash2,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -57,7 +70,7 @@ export function Sandbox() {
   return (
     <div className="w-full">
       <NavBar />
-      <div className="mx-auto max-w-4xl grid grid-cols-[repeat(auto-fill,minmax(28rem,1fr))] items-start">
+      <section className="mx-auto grid max-w-4xl grid-cols-[repeat(auto-fill,minmax(28rem,1fr))] items-start">
         <Request />
         <Request />
         <Request />
@@ -69,7 +82,7 @@ export function Sandbox() {
         <Request />
         <Request />
         <Request />
-      </div>
+      </section>
     </div>
   )
 }
@@ -79,31 +92,33 @@ function NavBar() {
     {
       title: "abc",
       href: "abc",
-      count: 123
+      count: 123,
     },
     {
       title: "lorem",
       href: "lorem",
-      count: 42
+      count: 42,
     },
     {
       title: "ipsum",
       href: "ipsum",
-      count: 0
+      count: 0,
     },
   ]
   return (
-    <NavigationMenu className="bg-secondary w-full max-w-full flex">
-      <div className="justify-self-start">
+    <NavigationMenu className="flex w-full max-w-full justify-between bg-secondary p-3 sticky top-0">
+      <div>
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuLink href="/">RequestBin</NavigationMenuLink>
           </NavigationMenuItem>
-            <NavigationMenuItem className="flex">
+          <NavigationMenuItem className="flex">
             <NavigationMenuTrigger
               onPointerMove={(e) => e.preventDefault()}
               onPointerLeave={(e) => e.preventDefault()}
-            >Baskets</NavigationMenuTrigger>
+            >
+              Baskets
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[200px] gap-2">
                 {components.map((component) => (
@@ -119,12 +134,14 @@ function NavBar() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink href="https://github.com/ls-capstone-team-one/hook-catcher">Docs</NavigationMenuLink>
+            <NavigationMenuLink className="text-subtle" href="https://github.com/ls-capstone-team-one/hook-catcher">
+              GitHub
+            </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </div>
-      <div className="justify-self-end">
-        <ButtonGroupDemo />
+      <div>
+        <BasketButtons />
       </div>
     </NavigationMenu>
   )
@@ -148,7 +165,7 @@ function ListItem({
   )
 }
 
-export function ButtonGroupDemo() {
+function BasketButtons() {
   const [label, setLabel] = useState("personal")
 
   return (
@@ -187,10 +204,18 @@ export function ButtonGroupDemo() {
   )
 }
 
+function BasketInfoHeader() {
+  return (
+    <section>
+    
+    </section>
+  )
+}
+
 function Request() {
   return (
     <section>
-      <Card className="max-w-md m-4">
+      <Card className="m-4 max-w-md">
         <CardHeader>
           <CardTitle>POST</CardTitle>
           <TimeStamp />
@@ -201,7 +226,7 @@ function Request() {
           <MyAccordion />
         </CardContent>
         {/* <CardFooter> */}
-          {/* <p>Lorem ipsum footer</p> */}
+        {/* <p>Lorem ipsum footer</p> */}
         {/* </CardFooter> */}
       </Card>
     </section>
@@ -216,20 +241,20 @@ const codePlaceholder = `Accept: */* Connection: close Content-Length: 9 Content
 function MyAccordion() {
   return (
     <Accordion type="single" collapsible defaultValue="item-1">
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Headers</AccordionTrigger>
-          <AccordionContent>
-            <SimpleCodeBlock content={codePlaceholder}/>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-2">
-          <AccordionTrigger>Body</AccordionTrigger>
-          <AccordionContent>
-            {/* <code>{`{"hello": "world"}`} </code> */}
-            <SimpleCodeBlock content={`"hello": "world"`} />
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Headers</AccordionTrigger>
+        <AccordionContent>
+          <SimpleCodeBlock content={codePlaceholder} />
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Body</AccordionTrigger>
+        <AccordionContent>
+          {/* <code>{`{"hello": "world"}`} </code> */}
+          <SimpleCodeBlock content={`"hello": "world"`} />
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
   )
 }
 
