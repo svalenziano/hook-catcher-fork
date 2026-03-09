@@ -71,7 +71,7 @@ import { useState } from "react"
 import { useHideOnScrollDown } from "@/hooks/useHideOnScrollDown"
 import { env } from "@/config/env"
 
-export function Sandbox() {
+export default function BinView() {
   return (
     <div className="w-full">
       <NavBar />
@@ -116,11 +116,13 @@ function NavBar() {
     <div
       className={`sticky top-0 z-50 w-full bg-secondary transition-transform duration-300 ${hidden ? "-translate-y-full" : "translate-y-0"}`}
     >
-      <NavigationMenu className="mx-auto max-w-4xl flex w-full justify-between p-3">
+      <NavigationMenu className="mx-auto flex w-full max-w-4xl justify-between p-3 pb-1.5">
         <div>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuLink className="text-lg" href="/">RequestBin</NavigationMenuLink>
+              <NavigationMenuLink className="text-lg" href="/">
+                RequestBin
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem className="flex">
               <NavigationMenuTrigger
@@ -180,7 +182,6 @@ function ListItem({
 }
 
 function BasketEditButtonBar() {
-
   return (
     <ButtonGroup>
       <ButtonGroup className="flex">
@@ -195,7 +196,7 @@ function BasketEditButtonBar() {
       <ButtonGroup>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon" aria-label="More Options">
+            <Button variant="destructive" size="icon" aria-label="More Options">
               <Trash />
             </Button>
           </DropdownMenuTrigger>
@@ -220,7 +221,7 @@ function BasketEditButtonBar() {
 function BasketInfoHeader() {
   const placeholder = {
     id: "48wje34",
-    count: 42
+    count: 42,
   }
 
   const basketUrl = env.APP_URL + "/" + placeholder.id
@@ -228,17 +229,30 @@ function BasketInfoHeader() {
   return (
     <section className="mx-auto max-w-4xl p-3">
       <h1 className="text-2xl font-bold">Basket: {placeholder.id}</h1>
-      <p>Bin URL: {basketUrl} <CopyButton content={basketUrl}/></p>
+      <p>
+        Bin URL: {basketUrl} <CopyButton content={basketUrl} />
+      </p>
       {/* <p><Tally5 className="inline" /> Count = {placeholder.count}</p> */}
       <p>Request Count: {placeholder.count}</p>
-      
     </section>
   )
 }
 
-function CopyButton({ content, className="" }: { content: string, className?: string }) {
+function CopyButton({
+  content,
+  className = "",
+}: {
+  content: string
+  className?: string
+}) {
   return (
-    <Button variant="ghost" size="icon" aria-label="Copy to clipboard" className={className} onClick={() => navigator.clipboard.writeText(content)}>
+    <Button
+      variant="ghost"
+      size="icon"
+      aria-label="Copy to clipboard"
+      className={className}
+      onClick={() => navigator.clipboard.writeText(content)}
+    >
       <ClipboardCopy />
     </Button>
   )
@@ -254,7 +268,7 @@ function Request() {
           <DateStamp />
         </CardHeader>
         <CardContent>
-          <Path path="abc123"/>
+          <Path path="abc123" />
           <MyAccordion />
         </CardContent>
         {/* <CardFooter> */}
@@ -291,28 +305,33 @@ function MyAccordion() {
 }
 
 type SimpleCodeBlockProps = {
-  content: string,
-  copyButtonVisible?: boolean,
+  content: string
+  copyButtonVisible?: boolean
 }
 
-function SimpleCodeBlock({ content, copyButtonVisible=true }: SimpleCodeBlockProps) {
+function SimpleCodeBlock({
+  content,
+  copyButtonVisible = true,
+}: SimpleCodeBlockProps) {
   return (
     <Item className="bg-secondary">
       <ItemContent>
         <p>{content}</p>
       </ItemContent>
-      {copyButtonVisible && <CopyButton content={content} className="hover:bg-ring"/>}
+      {copyButtonVisible && (
+        <CopyButton content={content} className="hover:bg-ring" />
+      )}
     </Item>
   )
 }
 
 function Path({ path }: { path: string }) {
   return (
-    <Item className="bg-primary text-muted">
+    <Item className="bg-primary text-primary-foreground">
       <ItemContent>
         <p>/{path}</p>
       </ItemContent>
-      <CopyButton content={path}/>
+      <CopyButton content={path} />
     </Item>
   )
 }
@@ -343,21 +362,4 @@ function DateStamp() {
   )
 }
 
-function MyItem() {
-  return (
-    <Item>
-      <ItemMedia variant="icon">
-        <Webhook />
-      </ItemMedia>
-      <ItemContent>
-        <ItemTitle>Title</ItemTitle>
-        <ItemDescription>Description</ItemDescription>
-      </ItemContent>
-      <ItemActions>
-        <Button>Action</Button>
-      </ItemActions>
-    </Item>
-  )
-}
 
-export default Sandbox
