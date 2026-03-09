@@ -33,7 +33,23 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 
-import { Webhook, Clock, CalendarDays, ClipboardCopy } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+import {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+} from "@/components/ui/button-group"
+
+import { Webhook, Clock, CalendarDays, ClipboardCopy, ArrowLeftIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Sandbox() {
@@ -123,6 +139,68 @@ function ListItem({
         </div>
       </NavigationMenuLink>
     </li>
+  )
+}
+
+export function ButtonGroupDemo() {
+  const [label, setLabel] = React.useState("personal")
+
+  return (
+    <ButtonGroup>
+      <ButtonGroup className="hidden sm:flex">
+        <Button variant="outline" size="icon" aria-label="Go Back">
+          <ArrowLeftIcon />
+        </Button>
+      </ButtonGroup>
+      <ButtonGroup>
+        <Button variant="outline">Archive</Button>
+        <Button variant="outline">Report</Button>
+      </ButtonGroup>
+      <ButtonGroup>
+        <Button variant="outline">Snooze</Button>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="icon" aria-label="More Options">
+              <Clock />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-40">
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <Clock />
+                Mark as Read
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Clock />
+                Archive
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <Clock />
+                Snooze
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Clock />
+                Add to Calendar
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Clock />
+                Add to List
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem variant="destructive">
+                <Clock />
+                Trash
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </ButtonGroup>
+    </ButtonGroup>
   )
 }
 
