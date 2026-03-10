@@ -40,19 +40,7 @@ export default function BinView() {
         <BasketEditButtonBar />
       </NavBar>
       <BasketInfoHeader />
-      <section className="mx-auto grid max-w-4xl grid-cols-[repeat(auto-fill,minmax(28rem,1fr))] items-start">
-        <RequestDetails />
-        <RequestDetails />
-        <RequestDetails />
-        <RequestDetails />
-        <RequestDetails />
-        <RequestDetails />
-        <RequestDetails />
-        <RequestDetails />
-        <RequestDetails />
-        <RequestDetails />
-        <RequestDetails />
-      </section>
+      <RequestList />
     </div>
   )
 }
@@ -62,7 +50,6 @@ function BasketInfoHeader() {
     id: "48wje34",
     count: 42,
   }
-
   const basketUrl = env.APP_URL + "/" + placeholder.id
 
   return (
@@ -72,6 +59,16 @@ function BasketInfoHeader() {
         Bin URL: {basketUrl} <CopyButton content={basketUrl} />
       </p>
       <p>Request Count: {placeholder.count}</p>
+    </section>
+  )
+}
+
+function RequestList() {
+  return (
+    <section className="mx-auto grid max-w-4xl grid-cols-[repeat(auto-fill,minmax(28rem,1fr))] items-start">
+      {Array.from({ length: 11 }, (_, i) => (
+        <RequestDetails key={i} />
+      ))}
     </section>
   )
 }
@@ -94,12 +91,12 @@ function RequestDetails() {
   )
 }
 
-const codePlaceholder = `Accept: */* Connection: close Content-Length: 9 Content-Type:
+function RequestHeadersAndBody() {
+  const codePlaceholder = `Accept: */* Connection: close Content-Length: 9 Content-Type:
             application/x-www-form-urlencoded User-Agent: curl/7.81.0 X-City:
             Durham X-Country: US X-Forwarded-For: 108.83.203.18 X-Real-Ip:
             108.83.203.18`
 
-function RequestHeadersAndBody() {
   return (
     <Accordion type="single" collapsible defaultValue="item-1">
       <AccordionItem value="item-1">
@@ -132,9 +129,7 @@ function SimpleCodeBlock({
       <ItemContent>
         <p>{content}</p>
       </ItemContent>
-      {copyButtonVisible && (
-        <CopyButton content={content}/>
-      )}
+      {copyButtonVisible && <CopyButton content={content} />}
     </Item>
   )
 }
@@ -195,11 +190,11 @@ function BasketEditButtonBar() {
               <Trash />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-40">
+          <DropdownMenuContent align="end" className="w-60">
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <Shredder />
-                Delete requests
+                Delete all requests
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Trash2 />

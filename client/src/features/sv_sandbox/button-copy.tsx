@@ -1,3 +1,8 @@
+/**
+  A general purpose "Copy" button, 
+  like you might use to copy text from a Code Block
+ */
+
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Copy } from "lucide-react"
