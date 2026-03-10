@@ -14,7 +14,7 @@ createRoot(document.getElementById("root")!).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/web/1234" element={<BinView />} />
+          <Route path="/web/:id" element={<BinView />} />
           <Route path="/sv" element={<BinView />} />
           <Route path="/jm" element={<Jm />} />
         </Routes>
