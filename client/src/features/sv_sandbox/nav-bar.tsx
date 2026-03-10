@@ -7,24 +7,8 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
-import {
-  ButtonGroup,
-} from "@/components/ui/button-group"
-
-import { Button } from "@/components/ui/button"
-
 import { useHideOnScrollDown } from "@/hooks/useHideOnScrollDown"
-import { RefreshCwIcon, RotateCwIcon, Shredder, Trash, Trash2 } from "lucide-react"
 import { type ReactNode } from "react"
-
 
 export default function NavBar({ children }: { children: ReactNode }) {
   const hidden = useHideOnScrollDown()
@@ -88,9 +72,7 @@ export default function NavBar({ children }: { children: ReactNode }) {
             </NavigationMenuItem>
           </NavigationMenuList>
         </div>
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
       </NavigationMenu>
     </div>
   )
@@ -111,43 +93,5 @@ function MenuListItem({
         </div>
       </NavigationMenuLink>
     </li>
-  )
-}
-
-
-function BasketEditButtonBar() {
-  return (
-    <ButtonGroup>
-      <ButtonGroup className="flex">
-        <Button variant="outline" size="icon" aria-label="Refresh">
-          <RefreshCwIcon />
-        </Button>
-        <Button variant="default" size="icon" aria-label="Auto-refresh">
-          <RotateCwIcon />
-        </Button>
-      </ButtonGroup>
-
-      <ButtonGroup>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="destructive" size="icon" aria-label="More Options">
-              <Trash />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-40">
-            <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <Shredder />
-                Delete requests
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Trash2 />
-                Destroy basket
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </ButtonGroup>
-    </ButtonGroup>
   )
 }

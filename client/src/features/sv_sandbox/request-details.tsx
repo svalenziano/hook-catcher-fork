@@ -5,33 +5,40 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-import {
-  Item,
-  ItemContent,
-  ItemMedia,
-} from "@/components/ui/item"
+import { Item, ItemContent, ItemMedia } from "@/components/ui/item"
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 import {
   Clock,
   CalendarDays,
+  RefreshCwIcon,
+  RotateCwIcon,
+  Shredder,
+  Trash,
+  Trash2,
 } from "lucide-react"
 
-// import { useState } from "react"
 import { env } from "@/config/env"
 import NavBar from "./nav-bar"
 import CopyButton from "./button-copy"
+import { Button } from "@/components/ui/button"
+import { ButtonGroup } from "@/components/ui/button-group"
+
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu"
 
 export default function BinView() {
   return (
-    <div className="w-full">
-      <NavBar />
+    <div>
+      <NavBar>
+        <BasketEditButtonBar />
+      </NavBar>
       <BasketInfoHeader />
       <section className="mx-auto grid max-w-4xl grid-cols-[repeat(auto-fill,minmax(28rem,1fr))] items-start">
         <RequestDetails />
@@ -50,9 +57,6 @@ export default function BinView() {
   )
 }
 
-
-
-
 function BasketInfoHeader() {
   const placeholder = {
     id: "48wje34",
@@ -67,13 +71,10 @@ function BasketInfoHeader() {
       <p>
         Bin URL: {basketUrl} <CopyButton content={basketUrl} />
       </p>
-      {/* <p><Tally5 className="inline" /> Count = {placeholder.count}</p> */}
       <p>Request Count: {placeholder.count}</p>
     </section>
   )
 }
-
-
 
 function RequestDetails() {
   return (
@@ -88,9 +89,6 @@ function RequestDetails() {
           <RequestPath path="abc123" />
           <RequestHeadersAndBody />
         </CardContent>
-        {/* <CardFooter> */}
-        {/* <p>Lorem ipsum footer</p> */}
-        {/* </CardFooter> */}
       </Card>
     </section>
   )
@@ -113,7 +111,6 @@ function RequestHeadersAndBody() {
       <AccordionItem value="item-2">
         <AccordionTrigger>Body</AccordionTrigger>
         <AccordionContent>
-          {/* <code>{`{"hello": "world"}`} </code> */}
           <SimpleCodeBlock content={`"hello": "world"`} />
         </AccordionContent>
       </AccordionItem>
@@ -136,7 +133,7 @@ function SimpleCodeBlock({
         <p>{content}</p>
       </ItemContent>
       {copyButtonVisible && (
-        <CopyButton content={content} className="hover:bg-ring" />
+        <CopyButton content={content}/>
       )}
     </Item>
   )
@@ -179,4 +176,39 @@ function DateStamp() {
   )
 }
 
+function BasketEditButtonBar() {
+  return (
+    <ButtonGroup>
+      <ButtonGroup className="flex">
+        <Button variant="outline" size="icon" aria-label="Refresh">
+          <RefreshCwIcon />
+        </Button>
+        <Button variant="default" size="icon" aria-label="Auto-refresh">
+          <RotateCwIcon />
+        </Button>
+      </ButtonGroup>
 
+      <ButtonGroup>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="destructive" size="icon" aria-label="More Options">
+              <Trash />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-40">
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <Shredder />
+                Delete requests
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Trash2 />
+                Destroy basket
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </ButtonGroup>
+    </ButtonGroup>
+  )
+}
