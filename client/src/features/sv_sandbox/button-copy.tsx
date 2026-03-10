@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ClipboardCopy } from "lucide-react"
+import { Copy } from "lucide-react"
 
 export default function CopyButton({
   content,
@@ -16,7 +16,7 @@ export default function CopyButton({
       className={className}
       onClick={() => navigator.clipboard.writeText(content)}
     >
-      <ClipboardCopy />
+      <Copy />
     </Button>
   )
 }
