@@ -1,9 +1,6 @@
-import {
-  BrowserRouter as Router,
-  Routes, Route
-} from 'react-router-dom';
-import { Home } from './components/custom-ui/Home';
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { Home } from "@/components/custom-ui/Home"
+import BinView from "@/features/bin-view/BinView"
 
 function App() {
   return (
@@ -14,12 +11,12 @@ function App() {
       {/* <NavBar /> */}
       <Routes>
         {/* Home page: will include NewBinCreator, BinList, SuccessModal, FailureModal */}
-        <Route path='/' element={<Home />} />
+        <Route path="/" element={<Home />} />
         {/* Bin page: will include bin info and request list */}
-        {/* <Route path='/bins/:id' element={<Bin /> } /> */}
+        <Route path="/bins/:id" element={<BinView />} />
       </Routes>
-    </ Router>
+    </Router>
   )
 }
 
-export default App;
+export default App
