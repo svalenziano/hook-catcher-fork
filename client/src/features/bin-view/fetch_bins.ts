@@ -13,3 +13,12 @@ export async function getBin(id: string) {
   const data = await response.json()
   return BinWithRequestsSchema.parse(data)
 }
+
+export async function deleteBin(id: string) {
+  const response = await fetch(`${env.API_URL}/api/bins/${id}`, {
+    method: "DELETE",
+  })
+  if (!response.ok) {
+    throw new Error(`Deletion of bin ${id} was unsuccessful.`)
+  }
+}

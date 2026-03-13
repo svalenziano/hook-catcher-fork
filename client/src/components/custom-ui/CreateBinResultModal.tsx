@@ -7,24 +7,24 @@ import {
 } from "@/components/ui/card";
 import { backendOrigin } from "@/config/env";
 import { Link } from "react-router-dom";
-import CopyButton from "./button-copy";
+import CopyButton from "./Button_Copy";
 import type { PersistedBin } from "./schema";
 
 export type CreateBinResult =
   | { status: "success"; bin: PersistedBin }
-  | { status: "error" };
+  | { status: "error" }
 
 type CreateBinResultModalProps = {
-  result: CreateBinResult | null;
-  onClose: () => void;
-};
+  result: CreateBinResult | null
+  onClose: () => void
+}
 
 export function CreateBinResultModal({
   result,
   onClose,
 }: CreateBinResultModalProps) {
   if (!result) {
-    return null;
+    return null
   }
 
   const isSuccess = result.status === "success";
@@ -49,7 +49,7 @@ export function CreateBinResultModal({
         onClick={(event) => event.stopPropagation()}
       >
         <CardHeader
-          className={`grid-cols-[1fr_auto] rounded-none items-center px-4 py-3 sm:px-5 ${
+          className={`grid-cols-[1fr_auto] items-center rounded-none px-4 py-3 sm:px-5 ${
             isSuccess ? "bg-emerald-500 text-white" : "bg-red-500 text-white"
           }`}
         >
@@ -100,5 +100,5 @@ export function CreateBinResultModal({
         </CardFooter>
       </Card>
     </div>
-  );
+  )
 }

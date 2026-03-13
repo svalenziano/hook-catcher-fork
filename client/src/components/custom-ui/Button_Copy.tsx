@@ -11,7 +11,7 @@ export default function CopyButton({
   content,
   className = "",
 }: {
-  content: string
+  content: string | null
   className?: string
 }) {
   return (
@@ -20,8 +20,8 @@ export default function CopyButton({
       size="icon"
       aria-label="Copy to clipboard"
       title="Copy to clipboard"
-      className={cn("hover:filter-[invert(20%)]", className)}
-      onClick={() => navigator.clipboard.writeText(content)}
+      className={cn("hover:filter-[invert(20%)] active:bg-red-500", className)}
+      onClick={() => navigator.clipboard.writeText(content || "")}
     >
       <Copy />
     </Button>
