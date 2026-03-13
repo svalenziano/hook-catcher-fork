@@ -1,28 +1,28 @@
 {
   "bin": {
-    "id": "m8MJqyem-h",
-    "created_at": "2026-03-13T14:37:30.677Z",
-    "expires_at": "2026-03-15T14:37:30.677Z"
+    "id": "QD4AO84Wxo",
+    "created_at": "2026-03-13T15:23:30.730Z",
+    "expires_at": "2026-03-15T15:23:30.730Z"
   },
   "requests": [
     {
-      "_id": "69b4213cdd43549580c08849",
-      "bin_id": "m8MJqyem-h",
+      "_id": "69b42bfcdd43549580c08879",
+      "bin_id": "QD4AO84Wxo",
       "method": "GET",
-      "path": "/m8MJqyem-h",
+      "path": "/QD4AO84Wxo",
       "headers": {
         "host": "localhost:3000",
         "user-agent": "curl/7.81.0",
         "accept": "*/*"
       },
       "body": {},
-      "received_at": "2026-03-13T14:37:48.147Z"
+      "received_at": "2026-03-13T15:23:40.169Z"
     },
     {
-      "_id": "69b4213cdd43549580c0884a",
-      "bin_id": "m8MJqyem-h",
+      "_id": "69b42bfcdd43549580c0887a",
+      "bin_id": "QD4AO84Wxo",
       "method": "POST",
-      "path": "/m8MJqyem-h",
+      "path": "/QD4AO84Wxo",
       "headers": {
         "host": "localhost:3000",
         "user-agent": "curl/7.81.0",
@@ -35,13 +35,13 @@
         "repository": "hook-catcher",
         "ref": "refs/heads/main"
       },
-      "received_at": "2026-03-13T14:37:48.305Z"
+      "received_at": "2026-03-13T15:23:40.449Z"
     },
     {
-      "_id": "69b4213cdd43549580c0884b",
-      "bin_id": "m8MJqyem-h",
+      "_id": "69b42bfcdd43549580c0887b",
+      "bin_id": "QD4AO84Wxo",
       "method": "PUT",
-      "path": "/m8MJqyem-h",
+      "path": "/QD4AO84Wxo",
       "headers": {
         "host": "localhost:3000",
         "user-agent": "curl/7.81.0",
@@ -56,13 +56,13 @@
           "key": "value"
         }
       },
-      "received_at": "2026-03-13T14:37:48.457Z"
+      "received_at": "2026-03-13T15:23:40.731Z"
     },
     {
-      "_id": "69b4213cdd43549580c0884c",
-      "bin_id": "m8MJqyem-h",
+      "_id": "69b42bfddd43549580c0887c",
+      "bin_id": "QD4AO84Wxo",
       "method": "DELETE",
-      "path": "/m8MJqyem-h",
+      "path": "/QD4AO84Wxo",
       "headers": {
         "host": "localhost:3000",
         "user-agent": "curl/7.81.0",
@@ -73,13 +73,13 @@
       "body": {
         "id": 42
       },
-      "received_at": "2026-03-13T14:37:48.614Z"
+      "received_at": "2026-03-13T15:23:41.028Z"
     },
     {
-      "_id": "69b4213cdd43549580c0884d",
-      "bin_id": "m8MJqyem-h",
+      "_id": "69b42bfddd43549580c0887d",
+      "bin_id": "QD4AO84Wxo",
       "method": "POST",
-      "path": "/m8MJqyem-h",
+      "path": "/QD4AO84Wxo",
       "headers": {
         "host": "localhost:3000",
         "user-agent": "curl/7.81.0",
@@ -94,13 +94,13 @@
           "title": "Add feature"
         }
       },
-      "received_at": "2026-03-13T14:37:48.749Z"
+      "received_at": "2026-03-13T15:23:41.334Z"
     },
     {
-      "_id": "69b4213cdd43549580c0884e",
-      "bin_id": "m8MJqyem-h",
+      "_id": "69b42bfddd43549580c0887e",
+      "bin_id": "QD4AO84Wxo",
       "method": "PATCH",
-      "path": "/m8MJqyem-h",
+      "path": "/QD4AO84Wxo",
       "headers": {
         "host": "localhost:3000",
         "user-agent": "curl/7.81.0",
@@ -112,443 +112,7 @@
         "id": 42,
         "status": "closed"
       },
-      "received_at": "2026-03-13T14:37:48.898Z"
-    },
-    {
-      "_id": "69b4214cdd43549580c0884f",
-      "bin_id": "m8MJqyem-h",
-      "method": "GET",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*"
-      },
-      "body": {},
-      "received_at": "2026-03-13T14:38:04.933Z"
-    },
-    {
-      "_id": "69b4214ddd43549580c08850",
-      "bin_id": "m8MJqyem-h",
-      "method": "POST",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "68"
-      },
-      "body": {
-        "event": "push",
-        "repository": "hook-catcher",
-        "ref": "refs/heads/main"
-      },
-      "received_at": "2026-03-13T14:38:05.114Z"
-    },
-    {
-      "_id": "69b4214ddd43549580c08851",
-      "bin_id": "m8MJqyem-h",
-      "method": "PUT",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "54"
-      },
-      "body": {
-        "id": 42,
-        "status": "updated",
-        "payload": {
-          "key": "value"
-        }
-      },
-      "received_at": "2026-03-13T14:38:05.274Z"
-    },
-    {
-      "_id": "69b4214ddd43549580c08852",
-      "bin_id": "m8MJqyem-h",
-      "method": "DELETE",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "9"
-      },
-      "body": {
-        "id": 42
-      },
-      "received_at": "2026-03-13T14:38:05.446Z"
-    },
-    {
-      "_id": "69b4214ddd43549580c08853",
-      "bin_id": "m8MJqyem-h",
-      "method": "POST",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "69"
-      },
-      "body": {
-        "action": "opened",
-        "pull_request": {
-          "number": 7,
-          "title": "Add feature"
-        }
-      },
-      "received_at": "2026-03-13T14:38:05.747Z"
-    },
-    {
-      "_id": "69b4214ddd43549580c08854",
-      "bin_id": "m8MJqyem-h",
-      "method": "PATCH",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "27"
-      },
-      "body": {
-        "id": 42,
-        "status": "closed"
-      },
-      "received_at": "2026-03-13T14:38:05.946Z"
-    },
-    {
-      "_id": "69b42156dd43549580c08855",
-      "bin_id": "m8MJqyem-h",
-      "method": "GET",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*"
-      },
-      "body": {},
-      "received_at": "2026-03-13T14:38:14.697Z"
-    },
-    {
-      "_id": "69b42156dd43549580c08856",
-      "bin_id": "m8MJqyem-h",
-      "method": "POST",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "68"
-      },
-      "body": {
-        "event": "push",
-        "repository": "hook-catcher",
-        "ref": "refs/heads/main"
-      },
-      "received_at": "2026-03-13T14:38:14.836Z"
-    },
-    {
-      "_id": "69b42156dd43549580c08857",
-      "bin_id": "m8MJqyem-h",
-      "method": "PUT",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "54"
-      },
-      "body": {
-        "id": 42,
-        "status": "updated",
-        "payload": {
-          "key": "value"
-        }
-      },
-      "received_at": "2026-03-13T14:38:14.980Z"
-    },
-    {
-      "_id": "69b42157dd43549580c08858",
-      "bin_id": "m8MJqyem-h",
-      "method": "DELETE",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "9"
-      },
-      "body": {
-        "id": 42
-      },
-      "received_at": "2026-03-13T14:38:15.151Z"
-    },
-    {
-      "_id": "69b42157dd43549580c08859",
-      "bin_id": "m8MJqyem-h",
-      "method": "POST",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "69"
-      },
-      "body": {
-        "action": "opened",
-        "pull_request": {
-          "number": 7,
-          "title": "Add feature"
-        }
-      },
-      "received_at": "2026-03-13T14:38:15.303Z"
-    },
-    {
-      "_id": "69b42157dd43549580c0885a",
-      "bin_id": "m8MJqyem-h",
-      "method": "PATCH",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "27"
-      },
-      "body": {
-        "id": 42,
-        "status": "closed"
-      },
-      "received_at": "2026-03-13T14:38:15.452Z"
-    },
-    {
-      "_id": "69b4215cdd43549580c0885b",
-      "bin_id": "m8MJqyem-h",
-      "method": "GET",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*"
-      },
-      "body": {},
-      "received_at": "2026-03-13T14:38:20.171Z"
-    },
-    {
-      "_id": "69b4215cdd43549580c0885c",
-      "bin_id": "m8MJqyem-h",
-      "method": "POST",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "68"
-      },
-      "body": {
-        "event": "push",
-        "repository": "hook-catcher",
-        "ref": "refs/heads/main"
-      },
-      "received_at": "2026-03-13T14:38:20.318Z"
-    },
-    {
-      "_id": "69b4215cdd43549580c0885d",
-      "bin_id": "m8MJqyem-h",
-      "method": "PUT",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "54"
-      },
-      "body": {
-        "id": 42,
-        "status": "updated",
-        "payload": {
-          "key": "value"
-        }
-      },
-      "received_at": "2026-03-13T14:38:20.472Z"
-    },
-    {
-      "_id": "69b4215cdd43549580c0885e",
-      "bin_id": "m8MJqyem-h",
-      "method": "DELETE",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "9"
-      },
-      "body": {
-        "id": 42
-      },
-      "received_at": "2026-03-13T14:38:20.618Z"
-    },
-    {
-      "_id": "69b4215cdd43549580c0885f",
-      "bin_id": "m8MJqyem-h",
-      "method": "POST",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "69"
-      },
-      "body": {
-        "action": "opened",
-        "pull_request": {
-          "number": 7,
-          "title": "Add feature"
-        }
-      },
-      "received_at": "2026-03-13T14:38:20.759Z"
-    },
-    {
-      "_id": "69b4215cdd43549580c08860",
-      "bin_id": "m8MJqyem-h",
-      "method": "PATCH",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "27"
-      },
-      "body": {
-        "id": 42,
-        "status": "closed"
-      },
-      "received_at": "2026-03-13T14:38:20.917Z"
-    },
-    {
-      "_id": "69b42160dd43549580c08861",
-      "bin_id": "m8MJqyem-h",
-      "method": "GET",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*"
-      },
-      "body": {},
-      "received_at": "2026-03-13T14:38:24.986Z"
-    },
-    {
-      "_id": "69b42161dd43549580c08862",
-      "bin_id": "m8MJqyem-h",
-      "method": "POST",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "68"
-      },
-      "body": {
-        "event": "push",
-        "repository": "hook-catcher",
-        "ref": "refs/heads/main"
-      },
-      "received_at": "2026-03-13T14:38:25.134Z"
-    },
-    {
-      "_id": "69b42161dd43549580c08863",
-      "bin_id": "m8MJqyem-h",
-      "method": "PUT",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "54"
-      },
-      "body": {
-        "id": 42,
-        "status": "updated",
-        "payload": {
-          "key": "value"
-        }
-      },
-      "received_at": "2026-03-13T14:38:25.291Z"
-    },
-    {
-      "_id": "69b42161dd43549580c08864",
-      "bin_id": "m8MJqyem-h",
-      "method": "DELETE",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "9"
-      },
-      "body": {
-        "id": 42
-      },
-      "received_at": "2026-03-13T14:38:25.438Z"
-    },
-    {
-      "_id": "69b42161dd43549580c08865",
-      "bin_id": "m8MJqyem-h",
-      "method": "POST",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "69"
-      },
-      "body": {
-        "action": "opened",
-        "pull_request": {
-          "number": 7,
-          "title": "Add feature"
-        }
-      },
-      "received_at": "2026-03-13T14:38:25.583Z"
-    },
-    {
-      "_id": "69b42161dd43549580c08866",
-      "bin_id": "m8MJqyem-h",
-      "method": "PATCH",
-      "path": "/m8MJqyem-h",
-      "headers": {
-        "host": "localhost:3000",
-        "user-agent": "curl/7.81.0",
-        "accept": "*/*",
-        "content-type": "application/json",
-        "content-length": "27"
-      },
-      "body": {
-        "id": 42,
-        "status": "closed"
-      },
-      "received_at": "2026-03-13T14:38:25.722Z"
+      "received_at": "2026-03-13T15:23:41.631Z"
     }
   ]
 }
