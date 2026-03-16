@@ -28,7 +28,9 @@ async function connect(config: ClientConfig = {}): Promise<Client> {
 
   try {
     await client.connect();
-    console.log("Successfully connected to the database.");
+    console.log(
+      `Connected to the Postgres DB with user "${defaultConfig.user}".`,
+    );
     return client;
   } catch (error) {
     client = null;

@@ -1,34 +1,34 @@
-import { useState } from "react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { useState } from "react"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 type NewBinCreatorProps = {
-  onCreateBin: () => void | Promise<void>;
-};
+  onCreateBin: () => void | Promise<void>
+}
 
 export function NewBinCreator({ onCreateBin }: NewBinCreatorProps) {
-  const [isCreating, setIsCreating] = useState(false);
-  const title = "New Bin";
-  const description = "Create a bin to collect and inspect HTTP requests";
+  const [isCreating, setIsCreating] = useState(false)
+  const title = "New Bin"
+  const description = "Create a bin to collect and inspect HTTP requests"
 
   async function handleCreateBin() {
-    setIsCreating(true);
+    setIsCreating(true)
     try {
-      await onCreateBin();
+      await onCreateBin()
     } finally {
-      setIsCreating(false);
+      setIsCreating(false)
     }
   }
 
   return (
     <section className="w-full px-4 py-8 sm:px-6 lg:px-8">
-      <Card className="mx-auto w-full max-w-5xl rounded-[2rem] border bg-card shadow-sm">
-        <CardHeader className="justify-items-center px-6 pb-4 pt-10 text-center sm:px-10">
+      <Card className="mx-auto w-full max-w-4xl rounded-[2rem] border bg-card shadow-sm">
+        <CardHeader className="justify-items-center px-6 pt-10 pb-4 text-center sm:px-10">
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
             {title}
           </h1>
 
-          <p className="mt-4 max-w-2xl text-balance text-center text-base text-muted-foreground sm:text-lg">
+          <p className="mt-4 max-w-2xl text-center text-base text-balance text-muted-foreground sm:text-lg">
             {description}
           </p>
         </CardHeader>
@@ -47,5 +47,5 @@ export function NewBinCreator({ onCreateBin }: NewBinCreatorProps) {
         </CardContent>
       </Card>
     </section>
-  );
+  )
 }

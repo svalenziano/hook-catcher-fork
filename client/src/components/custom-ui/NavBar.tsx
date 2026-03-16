@@ -41,7 +41,7 @@ export default function NavBar({ children }: { children?: ReactNode }) {
   )
 }
 
-function BasketsDropdown() {
+export function BasketsDropdown() {
   const placeholder = [
     {
       title: "abc",
