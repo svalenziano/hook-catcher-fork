@@ -13,6 +13,7 @@ import { Bin, BinResponse, BinWithRequestDocuments } from "../types";
 const BIN_ID_LENGTH = 10;
 
 export async function createBin(): Promise<BinResponse> {
+  // nanoid alphabet = "A-Za-z0-9_-" per https://github.com/ai/nanoid
   const id = nanoid(BIN_ID_LENGTH);
   const bin: Bin = await repoCreateBin(id);
 
