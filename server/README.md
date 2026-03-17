@@ -164,6 +164,12 @@ sudo -u postgres createdb hookcatcher
 sudo -u postgres psql -l | grep hookcatcher
 ```
 
+Create user and assign priveleges
+```bash
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO <username>;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO <username>;
+```
+
 Create the schema
 
 ```bash
