@@ -5,10 +5,15 @@ const defaultConfig: MongoClientOptions = {
   connectTimeoutMS: 5000,
   serverSelectionTimeoutMS: 5000,
   maxPoolSize: 10,
-  retryWrites: process.env.MONGO_RETRY === "false" ? false : true,
+  retryWrites: process.env.MONGO_RETRY === "true" 
+    ? true : false,
 };
 
 const defaultUri: string = process.env.MONGO_URI ?? "mongodb://localhost:27017";
+
+const defaultOptions = process.env.AWS_DOCDB_CERT
+  ? { tlsCAFile: process.env.AWS_DOCDB_CERT }
+  : {};
 
 const MONGO_DB_NAME = process.env.MONGO_DB_NAME ?? "hookcatcher";
 const MONGO_COLLECTION_NAME = "request_payloads";
@@ -23,7 +28,7 @@ let client: MongoClient | null = null;
  */
 async function connect(
   uri: string = defaultUri,
-  options: MongoClientOptions = {},
+  options: MongoClientOptions = defaultOptions,
 ): Promise<MongoClient> {
   if (client) {
     console.warn("Already connected to the MongoDB database.");
