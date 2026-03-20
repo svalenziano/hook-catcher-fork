@@ -8,7 +8,8 @@
       "Bash(npx shadcn@latest:*)",
       "Bash(npx prettier:*)",
       "WebFetch(domain:ui.shadcn.com)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "WebFetch(domain:d3c35jn1b61zms.cloudfront.net)"
     ]
   }
 }
